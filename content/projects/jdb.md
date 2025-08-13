@@ -1,14 +1,14 @@
 +++
-title = "Example"
+title = "JDB"
 weight = 1
 
 [extra]
-tech = ["Rust"]
-github = "https://github.com/jon-s58/example"
+tech = ["Rust", "Databases", "Tokio"]
+github = "https://github.com/jon-s58/djb"
 demo = "https://github.com"
 +++
 
-An example project to be filled later
+A database written from scratch using Rust
 
 <!-- more -->
 

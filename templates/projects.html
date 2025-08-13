@@ -20,7 +20,7 @@
                 <p class="project-tech">{{ project.extra.tech | join(sep=", ") }}</p>
                 {% endif %}
                 <div class="project-description">
-                    {{ project.summary | default(value=project.content) | safe | truncate(length=200) }}
+                    {{ project.summary | default(value=project.content) | striptags | truncate(length=200) }}
                 </div>
                 <div class="project-links">
                     {% if project.extra.github %}
