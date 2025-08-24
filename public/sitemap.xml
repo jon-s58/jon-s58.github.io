@@ -7,6 +7,10 @@
         <loc>https://jon-s58.github.io/blog/</loc>
     </url>
     <url>
+        <loc>https://jon-s58.github.io/blog/building-a-database-from-scratch-in-rust-introduction/</loc>
+        <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
         <loc>https://jon-s58.github.io/blog/hello-world/</loc>
         <lastmod>2025-08-06</lastmod>
     </url>
@@ -26,6 +30,15 @@
         <loc>https://jon-s58.github.io/tags/</loc>
     </url>
     <url>
+        <loc>https://jon-s58.github.io/tags/database/</loc>
+    </url>
+    <url>
         <loc>https://jon-s58.github.io/tags/introduction/</loc>
+    </url>
+    <url>
+        <loc>https://jon-s58.github.io/tags/new-series/</loc>
+    </url>
+    <url>
+        <loc>https://jon-s58.github.io/tags/rust/</loc>
     </url>
 </urlset>
