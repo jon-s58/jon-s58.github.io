@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Jonathan Sarig</title>
+    <title>Building a Database From Scratch in Rust - Jonathan Sarig</title>
     <link rel="stylesheet" href="https://jon-s58.github.io/style.css?v=2">
 </head>
 <body>
@@ -12,7 +12,7 @@
             <div class="nav-container">
                 <ul class="nav-menu">
                     <li><a href="/" >About</a></li>
-                    <li><a href="/blog" class="active">Blog</a></li>
+                    <li><a href="/blog" >Blog</a></li>
                     <li><a href="/projects" >Projects</a></li>
                     <li><a href="/cv" >Resume</a></li>
                 </ul>
@@ -34,18 +34,10 @@
 
     <main>
         
-<section class="page-header">
+<article class="blog-post">
     <div class="container">
-        <h1>Blog</h1>
-        <p>Thoughts on technology, development, and life</p>
-    </div>
-</section>
-
-<section class="blog-list">
-    <div class="container">
-        
-        <article class="blog-preview">
-            <h2><a href="https:&#x2F;&#x2F;jon-s58.github.io&#x2F;blog&#x2F;building-a-database-from-scratch-in-rust-introduction&#x2F;">Building a Database From Scratch in Rust</a></h2>
+        <header class="post-header">
+            <h1>Building a Database From Scratch in Rust</h1>
             <div class="blog-meta">
                 <time datetime="2025-08-13">August 13, 2025</time>
                 
@@ -60,30 +52,71 @@
                 </span>
                 
             </div>
-            <p></p>
-            <a href="https:&#x2F;&#x2F;jon-s58.github.io&#x2F;blog&#x2F;building-a-database-from-scratch-in-rust-introduction&#x2F;" class="read-more">Read more →</a>
-        </article>
+        </header>
         
-        <article class="blog-preview">
-            <h2><a href="https:&#x2F;&#x2F;jon-s58.github.io&#x2F;blog&#x2F;hello-world&#x2F;">Hello World</a></h2>
-            <div class="blog-meta">
-                <time datetime="2025-08-06">August 06, 2025</time>
-                
-                <span class="tags">
-                    
-                    <span class="tag">introduction</span>
-                    
-                </span>
-                
-            </div>
-            <p><p>Welcome to my blog here is a short introduction about me.</p></p>
-            <a href="https:&#x2F;&#x2F;jon-s58.github.io&#x2F;blog&#x2F;hello-world&#x2F;" class="read-more">Read more →</a>
-        </article>
+        <div class="post-content">
+            <p>Welcome to my first blog series where I will talk about the development of jdb (until I think of a better name), a database I am writing from scratch in Rust. You might be asking yourselves why? And I ask back, why not?</p>
+<p>The main goal of this project is to deepen my understanding of databases (further than reading database internals and going over other projects) and of Rust, a language I like.</p>
+<p>To start, this database will not be anything special, but as I go along I might insert some of my own ideas to make it unique.</p>
+<p>My roadmap (at least for now the parts might change as I continue development) is as follows:
+<em>Parts 1-3: The Storage Layer</em></p>
+<ul>
+<li>Pages and the slotted page design</li>
+<li>File management and page persistence</li>
+<li>Records and serialization</li>
+<li>Data types and schemas</li>
+<li>Heap files</li>
+</ul>
+<p><em>Parts 4-5: Memory Management</em></p>
+<ul>
+<li>Buffer pool and page caching</li>
+<li>Clock replacement algorithm</li>
+<li>Write-ahead Logging (WAL)</li>
+<li>Basic crash recovery</li>
+</ul>
+<p><em>Parts 6-8: Indexing</em></p>
+<ul>
+<li>B+ tree implementation</li>
+<li>Index scans and range queries</li>
+<li>Unique and non-unique indices</li>
+<li>Index-organized tables</li>
+</ul>
+<p><em>Parts 8-11: SQL</em></p>
+<ul>
+<li>SQL parser</li>
+<li>Query planning and optimization</li>
+<li>Logical and phyical plan</li>
+<li>Basic operators (scan, filter, join)</li>
+<li>Aggregations and sorting</li>
+</ul>
+<p><em>Parts 12-14: Network Layer</em></p>
+<ul>
+<li>TCP server using Tokio</li>
+<li>Custom wire protocol</li>
+<li>Message framing and serialization</li>
+<li>Connection handling and multiplexing</li>
+</ul>
+<p><em>Parts 15-16: Client</em></p>
+<ul>
+<li>Rust client crate</li>
+<li>CLI</li>
+<li>Authentication and sessions</li>
+<li>Error handling and retries</li>
+</ul>
+<p><em>Future parts:</em></p>
+<ul>
+<li>Transactions</li>
+<li>Advanced features (query caching, replication, backup)</li>
+<li>I also want to include a feature where you can write python (or another language) in the query</li>
+</ul>
+
+        </div>
         
-        
-        
+        <footer class="post-footer">
+            <a href="/blog" class="back-link">← Back to Blog</a>
+        </footer>
     </div>
-</section>
+</article>
 
     </main>
 
