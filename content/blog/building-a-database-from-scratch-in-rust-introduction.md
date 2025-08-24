@@ -12,6 +12,7 @@ The main goal of this project is to deepen my understanding of databases (furthe
 To start, this database will not be anything special, but as I go along I might insert some of my own ideas to make it unique.
 
 My roadmap (at least for now the parts might change as I continue development) is as follows:
+
 *Parts 1-3: The Storage Layer*
 - Pages and the slotted page design
 - File management and page persistence
