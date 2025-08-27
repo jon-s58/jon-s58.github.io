@@ -3,15 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{{ config.extra.author }}{% endblock %}</title>
+    <title>{% block title %}Jonathan Sarig — Software Engineer{% endblock %}</title>
+    <meta name="description" content="Personal site of Jonathan Sarig, a software engineer working in Go, Rust, and Python. Projects, blog, and contact.">
+    <link rel="canonical" href="{{ config.base_url }}{{ current_path }}">
     <link rel="stylesheet" href="{{ get_url(path='style.css') }}?v=2">
+    <meta property="og:title" content="Jonathan Sarig — Software Engineer">
+    <meta property="og:description" content="Projects, blog, and contact.">
+    <meta property="og:url" content="{{ config.base_url }}{{ current_path }}">
+    <meta name="twitter:card" content="summary">
+    {% if current_path == "/" %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jonathan Sarig",
+      "alternateName": "Jon Sarig",
+      "jobTitle": "Software Engineer",
+      "url": "{{ config.base_url }}/",
+      "image": "https://github.com/jon-s58.png",
+      "sameAs": [
+        "https://github.com/jon-s58",
+        "https://www.linkedin.com/in/jonathan-sarig",
+        "https://www.cloudquery.io/authors/jonathan-sarig",
+        "https://medium.com/@jonathansarig",
+        "https://www.kaggle.com/deus58"
+      ]
+    }
+    </script>
+    {% endif %}
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-container">
                 <ul class="nav-menu">
-                    <li><a href="/" {% if current_path == "/" %}class="active"{% endif %}>About</a></li>
+                    <li><a href="/" {% if current_path == "/" %}class="active"{% endif %}>About Jonathan Sarig</a></li>
                     <li><a href="/blog" {% if current_path == "/blog/" %}class="active"{% endif %}>Blog</a></li>
                     <li><a href="/projects" {% if current_path == "/projects/" %}class="active"{% endif %}>Projects</a></li>
                     <li><a href="/cv" {% if current_path == "/cv/" %}class="active"{% endif %}>Resume</a></li>
@@ -41,7 +67,7 @@
             <p>&copy; 2024 {{ config.extra.author }}</p>
         </div>
     </footer>
-    
+
     <script src="{{ get_url(path='scripts/spaceships.js') }}"></script>
 </body>
 </html>
