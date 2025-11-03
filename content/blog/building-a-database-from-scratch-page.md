@@ -9,7 +9,9 @@ tags = ["Rust", "Database"]
 
 Kicking off this series, we begin with the **Storage Layer** - the part of the database responsible for storing the data on disk, indexing, and everything else related.
 
-Understanding the storage layer is key to understanding how databases work, since every action goes through this layer. Have you ever wondered how your records are being stored on and read from disk, which parts of your data are cached, and how do indices come into play?
+Have you ever wondered how are your records being stored? what does a row mean to the computer? is everything on RAM? on disk? how is it more efficient than just storing the raw data on files?
+
+in this blog piece I will dive into the interface between raw data on files (Binary) and actual records and tables the basic unit of this interface is called a **Page**.
 
 ## What are Pages?
 
@@ -46,8 +48,7 @@ Different databases have made different choices:
 
 ### My Choice: 8KB
 
-I chose **8KB** for several reasons:
-- It's not too big or too small (and will be configurable)
+I chose **8KB** because:
 - Used by many successful databases like PostgreSQL
 - Works well with most operating and file systems 
 
