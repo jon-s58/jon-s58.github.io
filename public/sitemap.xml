@@ -11,6 +11,10 @@
         <lastmod>2025-08-25</lastmod>
     </url>
     <url>
+        <loc>https://jon-s58.github.io/blog/building-a-database-from-scratch-page/</loc>
+        <lastmod>2025-12-11</lastmod>
+    </url>
+    <url>
         <loc>https://jon-s58.github.io/blog/hello-world/</loc>
         <lastmod>2025-08-06</lastmod>
     </url>
@@ -40,5 +44,8 @@
     </url>
     <url>
         <loc>https://jon-s58.github.io/tags/rust/</loc>
+    </url>
+    <url>
+        <loc>https://jon-s58.github.io/tags/storage-layer/</loc>
     </url>
 </urlset>
