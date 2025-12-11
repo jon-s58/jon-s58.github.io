@@ -1,6 +1,7 @@
 +++
 title = "Building a Database From Scratch in Rust"
 date = 2025-08-25
+reading_time = 2
 [taxonomies]
 tags = ["New Series", "Rust", "Database"]
 +++

@@ -1,6 +1,7 @@
 +++
 title = "Building a Database From Scratch - Storage Layer Page Design"
 date = 2025-12-11
+reading_time = 10
 [taxonomies]
 tags = ["Rust", "Database", "Storage Layer"]
 +++

@@ -9,6 +9,9 @@
             <h1>{{ page.title }}</h1>
             <div class="blog-meta">
                 <time datetime="{{ page.date }}">{{ page.date | date(format="%B %d, %Y") }}</time>
+                {% if page.extra.reading_time %}
+                <span class="reading-time">• {{ page.extra.reading_time }} min read</span>
+                {% endif %}
                 {% if page.taxonomies.tags %}
                 <span class="tags">
                     {% for tag in page.taxonomies.tags %}

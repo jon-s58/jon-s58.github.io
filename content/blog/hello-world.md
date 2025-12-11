@@ -1,6 +1,7 @@
 +++
 title = "Hello World"
 date = 2025-08-06
+reading_time = 1
 [taxonomies]
 tags = ["introduction"]
 +++
