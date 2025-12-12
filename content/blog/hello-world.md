@@ -1,9 +1,10 @@
 +++
 title = "Hello World"
 date = 2025-08-06
-reading_time = 1
 [taxonomies]
 tags = ["introduction"]
+[extra]
+reading_time = 1
 +++
 
 Welcome to my blog here is a short introduction about me.

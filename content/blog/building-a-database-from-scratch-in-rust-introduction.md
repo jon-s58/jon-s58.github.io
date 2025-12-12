@@ -1,9 +1,10 @@
 +++
 title = "Building a Database From Scratch in Rust"
 date = 2025-08-25
-reading_time = 2
 [taxonomies]
 tags = ["New Series", "Rust", "Database"]
+[extra]
+reading_time = 2
 +++
 
 Welcome to my first blog series where I will talk about the development of jdb (until I think of a better name), a database I am writing from scratch in Rust. You might be asking yourselves why? And I ask back, why not?
