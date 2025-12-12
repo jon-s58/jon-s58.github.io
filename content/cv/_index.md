@@ -29,11 +29,13 @@ points = [
 ]
 
 [[extra.experience]]
-title = "Data Analyst (Cyber)"
+title = "Data Analyst / Engineer"
 company = "Upstream Security"
 location = "Israel"
 date = "Jul 2022 - May 2023"
 points = [
+    "Built high performace data parsing and normalization pipelines to transform raw JSON and XML data into relational",
+    "Analyzed terabytes of vehicle data to identify and build detectors of cyber attacks"
 ]
 
 [[extra.experience]]
