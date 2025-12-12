@@ -1,6 +1,6 @@
 +++
-title = "JDB"
-weight = 1
+title = "Astra"
+weight = 2
 
 [extra]
 tech = ["Rust", "Deep Learning", "Math"]
