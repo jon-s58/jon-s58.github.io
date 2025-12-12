@@ -4,8 +4,7 @@ weight = 1
 
 [extra]
 tech = ["Rust", "Databases", "Tokio"]
-github = "https://github.com/jon-s58/djb"
-demo = "https://github.com"
+github = "https://github.com/jon-s58/jdb"
 +++
 
 A database written from scratch using Rust
@@ -13,8 +12,8 @@ A database written from scratch using Rust
 <!-- more -->
 
 ## Key Features
-- Feat1
-- Feat2
+- Simple Relational Database
+- High Performace
 
 ## Technical Implementation
-Built with Rust for ...
+Built with Rust for the sake of learning how databases work
