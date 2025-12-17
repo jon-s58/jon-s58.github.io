@@ -7,17 +7,18 @@ tags = ["introduction"]
 reading_time = 1
 +++
 
-Welcome to my blog here is a short introduction about me.
+Welcome to my blog *Loops of Thought*. This name was inspired by a few things: first is the book "I Am a Strange Loop". I also wanted a mix of programming lingo and mind/psych terms and came to this. 
 
 <!-- more -->
-I'm Jon, a software engineer with background in backend and data roles, passionate about open-source project and engineering in general.
+I'm Jon, a software engineer with a background in backend and data roles. I have many passions all surrounding learning new things, and in this blog I will talk and teach about them.
 
-## What to Expect
+Some of the entries will be purely technical, some will be just me rambling about stuff but I promise all will have added value to you the readers!
 
-In this blog, I'll be covering:
-- Updates on projects i'm working on
+## What to Expect in The Near Future
+- Updates on projects I'm working on
 - Technical tutorials and how-to guides
-- Reviews of tools and technologies
-- Thoughts on software engineering practices
+- Code Walkthroughs
+- Product Releases (I am working on a few things both open-source and not)
+- Thoughts on Science, Psychology, and Anything else that interests me
 
 Stay tuned for more content!

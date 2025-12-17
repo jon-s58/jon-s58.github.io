@@ -7,6 +7,9 @@ tags = ["New Series", "Rust", "Database"]
 reading_time = 2
 +++
 
+I am building a database from scratch using Rust! why? for fun, to learn more about Databases, Rust, and to become a better developer. 
+
+<!-- more -->
 Welcome to my first blog series where I will talk about the development of jdb (until I think of a better name), a database I am writing from scratch in Rust. You might be asking yourselves why? And I ask back, why not?
 
 The main goal of this project is to deepen my understanding of databases (further than reading database internals and going over other projects) and of Rust, a language I like.

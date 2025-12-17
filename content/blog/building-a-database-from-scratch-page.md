@@ -7,6 +7,9 @@ tags = ["Rust", "Database", "Storage Layer"]
 reading_time = 10
 +++
 
+From 0-100 real quick, we will be diving into the storage layer - the first layer of the database, and specifically to the Page one of the most basic units.
+
+<!-- more -->
 ## The Storage Layer
 
 Kicking off this series, we begin with the **Storage Layer** - the part of the database responsible for storing the data on disk, indexing, and everything else related.
