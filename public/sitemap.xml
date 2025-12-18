@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://jon-s58.github.io/</loc>
+        <loc>https://www.jonathansarig.com/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/blog/</loc>
+        <loc>https://www.jonathansarig.com/blog/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/blog/building-a-database-from-scratch-in-rust-introduction/</loc>
+        <loc>https://www.jonathansarig.com/blog/building-a-database-from-scratch-in-rust-introduction/</loc>
         <lastmod>2025-08-25</lastmod>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/blog/building-a-database-from-scratch-page/</loc>
+        <loc>https://www.jonathansarig.com/blog/building-a-database-from-scratch-page/</loc>
         <lastmod>2025-12-11</lastmod>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/blog/hello-world/</loc>
+        <loc>https://www.jonathansarig.com/blog/hello-world/</loc>
         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/contact/</loc>
+        <loc>https://www.jonathansarig.com/contact/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/cv/</loc>
+        <loc>https://www.jonathansarig.com/cv/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/projects/</loc>
+        <loc>https://www.jonathansarig.com/projects/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/projects/astra/</loc>
+        <loc>https://www.jonathansarig.com/projects/astra/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/projects/jdb/</loc>
+        <loc>https://www.jonathansarig.com/projects/jdb/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/</loc>
+        <loc>https://www.jonathansarig.com/tags/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/database/</loc>
+        <loc>https://www.jonathansarig.com/tags/database/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/introduction/</loc>
+        <loc>https://www.jonathansarig.com/tags/introduction/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/new-series/</loc>
+        <loc>https://www.jonathansarig.com/tags/new-series/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/rust/</loc>
+        <loc>https://www.jonathansarig.com/tags/rust/</loc>
     </url>
     <url>
-        <loc>https://jon-s58.github.io/tags/storage-layer/</loc>
+        <loc>https://www.jonathansarig.com/tags/storage-layer/</loc>
     </url>
 </urlset>

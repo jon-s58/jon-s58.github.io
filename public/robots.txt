@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://jon-s58.github.io/sitemap.xml
+Sitemap: https://www.jonathansarig.com/sitemap.xml
