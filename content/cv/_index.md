@@ -67,7 +67,7 @@ items = ["Rust", "Go", "Python", "TypeScript"]
 
 [[extra.skills]]
 category = "Frameworks"
-items = ["Axum", "FastAPI", "React"]
+items = ["Axum", "Tokio","FastAPI", "React"]
 
 [[extra.skills]]
 category = "Databases"
