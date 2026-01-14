@@ -27,7 +27,12 @@ jobs:
       - name: Install Zola
         run: |
           wget -q -O - https://github.com/getzola/zola/releases/download/v0.18.0/zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz | tar xzf - -C /usr/local/bin
-          
+
+      - name: Generate Resume PDF
+        run: |
+          pip install fpdf2
+          python scripts/generate_resume_pdf.py
+
       - name: Build with Zola
         run: zola build
         
