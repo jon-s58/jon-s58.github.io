@@ -6,6 +6,17 @@ template = "cv.html"
 pdf_link = "/resume.pdf"
 
 [[extra.experience]]
+title = "Founder"
+company = "Stealth"
+location = "Remote"
+date = "Aug 2025 - Present"
+points = [
+    "Technical founder of an early-stage startup, building the full product from the ground up using Rust, React Native, and PostgreSQL",
+    "Contributing to open source projects in the Rust and React Native ecosystems",
+    "Writing technical blog posts and how-to guides on my personal blog, covering systems programming, mobile development, and startup engineering"
+]
+
+[[extra.experience]]
 title = "Software Engineer"
 company = "CloudQuery"
 location = "Remote"
@@ -67,7 +78,7 @@ items = ["Rust", "Go", "Python", "TypeScript"]
 
 [[extra.skills]]
 category = "Frameworks"
-items = ["Axum", "Tokio","FastAPI", "React"]
+items = ["Axum", "Tokio","FastAPI", "React", "React Native"]
 
 [[extra.skills]]
 category = "Databases"
