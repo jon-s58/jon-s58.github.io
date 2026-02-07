@@ -1,6 +1,11 @@
 # The URL the site will be built for
 base_url = "https://www.jonathansarig.com"
 
+# Generate Atom feeds for sections that have generate_feeds = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+author = "Jonathan Sarig"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
