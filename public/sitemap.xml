@@ -19,6 +19,10 @@
         <lastmod>2025-08-06</lastmod>
     </url>
     <url>
+        <loc>https://www.jonathansarig.com/blog/rust-cpp-ffi/</loc>
+        <lastmod>2026-02-26</lastmod>
+    </url>
+    <url>
         <loc>https://www.jonathansarig.com/contact/</loc>
     </url>
     <url>
@@ -37,7 +41,13 @@
         <loc>https://www.jonathansarig.com/tags/</loc>
     </url>
     <url>
+        <loc>https://www.jonathansarig.com/tags/c/</loc>
+    </url>
+    <url>
         <loc>https://www.jonathansarig.com/tags/database/</loc>
+    </url>
+    <url>
+        <loc>https://www.jonathansarig.com/tags/ffi/</loc>
     </url>
     <url>
         <loc>https://www.jonathansarig.com/tags/introduction/</loc>
@@ -47,6 +57,9 @@
     </url>
     <url>
         <loc>https://www.jonathansarig.com/tags/rust/</loc>
+    </url>
+    <url>
+        <loc>https://www.jonathansarig.com/tags/standalone/</loc>
     </url>
     <url>
         <loc>https://www.jonathansarig.com/tags/storage-layer/</loc>
