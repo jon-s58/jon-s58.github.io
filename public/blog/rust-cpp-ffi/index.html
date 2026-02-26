@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust C++ FFI - Jonathan Sarig</title>
+    <meta name="description" content="Personal site of Jonathan Sarig, a software engineer working in Go, Rust, and Python. Projects, blog, and contact.">
+    <link rel="canonical" href="https:&#x2F;&#x2F;www.jonathansarig.com&#x2F;blog&#x2F;rust-cpp-ffi&#x2F;">
+    <link rel="stylesheet" href="https://www.jonathansarig.com/style.css?v=2">
+    <meta property="og:title" content="Jonathan Sarig — Software Engineer">
+    <meta property="og:description" content="Projects, blog, and contact.">
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.jonathansarig.com&#x2F;blog&#x2F;rust-cpp-ffi&#x2F;">
+    <meta name="twitter:card" content="summary">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="/" >About Jonathan Sarig</a></li>
+                    <li><a href="/blog" >Loops of Thought</a></li>
+                    <li><a href="/projects" >Projects</a></li>
+                    <li><a href="/cv" >Resume</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https:&#x2F;&#x2F;github.com&#x2F;jon-s58" target="_blank" rel="noopener" class="nav-social-link" title="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;jonathan-sarig" target="_blank" rel="noopener" class="nav-social-link" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+<a href="/blog/atom.xml" class="rss-float-button" title="Subscribe to RSS feed">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+    </svg>
+</a>
+<article class="blog-post">
+    <div class="container">
+        <header class="post-header">
+            <h1>Rust C++ FFI</h1>
+            <div class="blog-meta">
+                <time datetime="2026-02-26">February 26, 2026</time>
+                
+                <span class="reading-time">• 5 min read</span>
+                
+                
+                <span class="tags">
+                    
+                    <span class="tag">Standalone</span>
+                    
+                    <span class="tag">Rust</span>
+                    
+                    <span class="tag">C++</span>
+                    
+                    <span class="tag">FFI</span>
+                    
+                </span>
+                
+            </div>
+        </header>
+        
+        <div class="post-content">
+            <p>Notes from tinkering with C++ FFI in Rust.</p>
+<span id="continue-reading"></span>
+<p>Recently I've been working on a project (more on that in future blogs) that involves OpenCASCADE (OCCT) and knowing that building this project in C++ would have taken me forever, I decided to look at my options (assuming I go with Rust for this project and it is suitable):</p>
+<ul>
+<li>Using a native Rust crate</li>
+<li>Manually porting parts that I need and rewriting them in Rust</li>
+<li>Finding a way to call the functions I need from Rust</li>
+</ul>
+<p>The Rust crates didn't cover my current need and future expansion and rewriting the code seems like an interesting project but that means I'll have to dive deep into OCCT more than I am interested in doing for now. That means my best option is to try FFI so I started looking online.
+I've read a few online resources including the Rustonomicon chapter about FFI and encountered CXX — "safe interop between Rust and C++", went over their core concepts and tutorial, and made a decision.
+I must say it was surprisingly simple to use. I created a new crate looking like this:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>ffi/
+</span><span>-- cpp/
+</span><span>-- -- bridge.h 
+</span><span>-- -- bridge.cc
+</span><span>-- src/
+</span><span>-- -- lib.rs
+</span><span>-- build.rs
+</span><span>-- Cargo.toml
+</span></code></pre>
+<p>On the C++ side of things I included the <code>rust/cxx.h</code> header and declared the unique C++ structs and functions in the header file. Note that if there are shared structs between Rust and C++ we declare them in Rust with the fields, but in C++ we just declare their existence. For example:</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// lib.rs - Rust side declaration, inside #[cxx::bridge] mod ffi
+</span><span style="color:#b48ead;">struct </span><span>ShapeInfo {
+</span><span>        </span><span style="color:#bf616a;">num_faces</span><span>: </span><span style="color:#b48ead;">i32</span><span>,
+</span><span>        </span><span style="color:#bf616a;">num_edges</span><span>: </span><span style="color:#b48ead;">i32</span><span>,
+</span><span>        </span><span style="color:#bf616a;">num_vertices</span><span>: </span><span style="color:#b48ead;">i32</span><span>,
+</span><span>    }
+</span></code></pre>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#65737e;">// bridge.h - C++ side declaration
+</span><span style="color:#b48ead;">struct </span><span>ShapeInfo;
+</span></code></pre>
+<p>And then it can be used like this</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span>ShapeInfo </span><span style="color:#8fa1b3;">count_topology</span><span>(</span><span style="color:#b48ead;">const</span><span> TopoDS_Shape&amp; </span><span style="color:#bf616a;">shape</span><span>) {
+</span><span>    ShapeInfo info;
+</span><span>    info.</span><span style="color:#bf616a;">num_faces </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>    info.</span><span style="color:#bf616a;">num_edges </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>    info.</span><span style="color:#bf616a;">num_vertices </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>    ...
+</span><span>    </span><span style="color:#b48ead;">return</span><span> info;
+</span><span>}
+</span></code></pre>
+<p>Now working with a struct that is defined in C++ with functions in C++ and making it part of your Rust code is a little more complex but still pretty simple. For example, my core struct is Shape and I want to be able to use it like <code>shape.info()</code>, but Shape is a structure from C++ and get_shape_info is a C++ function. What do I do?
+First, we need to define a wrapper to the C++ struct, in our case it's the OCCT <code>TopoDS_Shape</code>.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">cxx</span><span>::</span><span style="color:#bf616a;">bridge</span><span>]
+</span><span style="color:#b48ead;">mod </span><span>ffi {
+</span><span>    </span><span style="color:#b48ead;">unsafe extern </span><span>&quot;</span><span style="color:#a3be8c;">C++</span><span>&quot; {
+</span><span>        include!(&quot;</span><span style="color:#a3be8c;">cad-ffi/cpp/bridge.h</span><span>&quot;);
+</span><span>
+</span><span>        </span><span style="color:#65737e;">/// Opaque wrapper for TopoDS_Shape.
+</span><span>        </span><span style="color:#65737e;">/// Allows Rust to own the shape lifetime via UniquePtr.
+</span><span>        </span><span style="color:#b48ead;">type </span><span>ShapeWrapper;
+</span><span>
+</span><span>        </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">get_shape_info</span><span>(</span><span style="color:#bf616a;">wrapper</span><span>: &amp;ShapeWrapper) -&gt; ShapeInfo;
+</span><span>    }
+</span><span>}
+</span></code></pre>
+<p>You might have noticed we are using ShapeInfo which is defined outside of the <code>unsafe extern "C++"</code> directly under <code>mod ffi</code>, which means both Rust and C++ know the struct fields. Now we have the <code>ShapeWrapper</code> struct but no functions that belong to it. Since it's a C++ struct we only have functions that receive it as an input. To use it more like a Rust struct, we need to wrap it again, and this time in a unique pointer that lets Rust own the shape lifetime</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">pub struct </span><span>Shape {
+</span><span>    </span><span style="color:#bf616a;">inner</span><span>: cxx::UniquePtr&lt;ffi::ShapeWrapper&gt;,
+</span><span>}
+</span></code></pre>
+<p>And then we can define functions that belong to this struct</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">impl </span><span>Shape {
+</span><span>    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">info</span><span>(&amp;</span><span style="color:#bf616a;">self</span><span>) -&gt; ShapeInfo {
+</span><span>        </span><span style="color:#b48ead;">return </span><span>ffi::get_shape_info(&amp;</span><span style="color:#bf616a;">self</span><span>.inner)
+</span><span>        }
+</span><span>}
+</span></code></pre>
+<p>Now we do need to define <code>get_shape_info</code> in C++ both in the header file and actually implement it, and for that we also need to implement the <code>ShapeWrapper</code> struct which wraps the <code>TopoDS_Shape</code> in C++ since the original Shape struct from OCCT is a bit complex to use</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#65737e;">// bridge.h
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">ShapeWrapper </span><span style="color:#eff1f5;">{
+</span><span style="color:#b48ead;">public</span><span style="color:#eff1f5;">:
+</span><span style="color:#eff1f5;">    </span><span style="color:#65737e;">// Use a pointer to avoid including TopoDS_Shape.hxx in header
+</span><span style="color:#eff1f5;">    </span><span style="color:#b48ead;">void</span><span>*</span><span style="color:#eff1f5;"> shape_ptr;
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">    </span><span style="color:#8fa1b3;">ShapeWrapper</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">    </span><span style="color:#8fa1b3;">~ShapeWrapper</span><span style="color:#eff1f5;">();
+</span><span style="color:#eff1f5;">
+</span><span style="color:#eff1f5;">}</span><span>;
+</span><span>
+</span><span>ShapeInfo </span><span style="color:#8fa1b3;">get_shape_info</span><span>(</span><span style="color:#b48ead;">const</span><span> ShapeWrapper&amp; </span><span style="color:#bf616a;">wrapper</span><span>);
+</span></code></pre>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#65737e;">// bridge.cc
+</span><span style="color:#65737e;">// Get shape topology info
+</span><span>ShapeInfo </span><span style="color:#8fa1b3;">get_shape_info</span><span>(</span><span style="color:#b48ead;">const</span><span> ShapeWrapper&amp; </span><span style="color:#bf616a;">wrapper</span><span>) {
+</span><span>    </span><span style="color:#b48ead;">const</span><span> TopoDS_Shape&amp; shape = </span><span style="color:#bf616a;">get_shape</span><span>(wrapper);
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">if </span><span>(shape.</span><span style="color:#bf616a;">IsNull</span><span>()) {
+</span><span>        ShapeInfo info;
+</span><span>        info.</span><span style="color:#bf616a;">num_faces </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>        info.</span><span style="color:#bf616a;">num_edges </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>        info.</span><span style="color:#bf616a;">num_vertices </span><span>= </span><span style="color:#d08770;">0</span><span>;
+</span><span>        </span><span style="color:#b48ead;">return</span><span> info;
+</span><span>    }
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">return </span><span style="color:#bf616a;">count_topology</span><span>(shape);
+</span><span>}
+</span></code></pre>
+<p>And now we have a struct and a function that belongs to it in Rust that behind the scenes calls C++ code, and the use of it is as simple as <code>my_shape.info()</code>.</p>
+<p>The last thing we need to do is to tell Cargo how to build this project. Since it's not only Rust, we need to add a <code>build.rs</code> file next to <code>Cargo.toml</code></p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#65737e;">// build.rs
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>    </span><span style="color:#65737e;">// This is OCCT specific and depends on how you want to link the packages you use
+</span><span>    </span><span style="color:#b48ead;">let </span><span>(include_dir, lib_dir) = </span><span style="color:#96b5b4;">find_occt</span><span>();
+</span><span>
+</span><span>    cxx_build::bridge(&quot;</span><span style="color:#a3be8c;">src/lib.rs</span><span>&quot;)
+</span><span>        .</span><span style="color:#96b5b4;">file</span><span>(&quot;</span><span style="color:#a3be8c;">cpp/bridge.cc</span><span>&quot;)
+</span><span>        .</span><span style="color:#96b5b4;">include</span><span>(&amp;include_dir)
+</span><span>        .</span><span style="color:#96b5b4;">flag_if_supported</span><span>(&quot;</span><span style="color:#a3be8c;">-std=c++17</span><span>&quot;)
+</span><span>        .</span><span style="color:#96b5b4;">compile</span><span>(&quot;</span><span style="color:#a3be8c;">cad_ffi_bridge</span><span>&quot;);
+</span><span>}
+</span></code></pre>
+<p>Finally, we can run <code>cargo build</code> and our project is compiled!
+Interested in using C++ with Rust? Go to the <a href="https://cxx.rs/index.html">CXX docs</a> and follow along.
+This blog is a taste of my experience using C++ with Rust in the same project. In future blogs I will dive deeper into this and also into the project I am working on.</p>
+
+        </div>
+        
+        <footer class="post-footer">
+            <a href="/blog" class="back-link">← Back to Blog</a>
+        </footer>
+    </div>
+</article>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Jonathan Sarig</p>
+        </div>
+    </footer>
+
+    <script src="https://www.jonathansarig.com/scripts/spaceships.js"></script>
+</body>
+</html>
