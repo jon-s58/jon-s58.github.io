@@ -36,6 +36,9 @@
     <header>
         <nav>
             <div class="nav-container">
+                <a href="/" class="nav-logo" title="Home">
+                    <img src="{{ get_url(path='logo.svg') }}" alt="Jonathan Sarig logo">
+                </a>
                 <ul class="nav-menu">
                     <li><a href="/" {% if current_path == "/" %}class="active"{% endif %}>About Jonathan Sarig</a></li>
                     <li><a href="/blog" {% if current_path == "/blog/" %}class="active"{% endif %}>Loops of Thought</a></li>
